@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormattedNumberEntry.iOS", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormattedNumberEntry.Droid", "Droid\FormattedNumberEntry.Droid.csproj", "{3C002655-07DE-447C-9641-B330514191C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormattedNumberEntrySample.UWP", "UWP\FormattedNumberEntrySample.UWP.csproj", "{FF1A936B-39C3-402D-A191-D65220C57428}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormattedNumberEntry.UWP", "UWP\FormattedNumberEntry.UWP.csproj", "{FF1A936B-39C3-402D-A191-D65220C57428}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +99,8 @@ Global
 		{3C002655-07DE-447C-9641-B330514191C1}.Release|x86.Build.0 = Release|Any CPU
 		{3C002655-07DE-447C-9641-B330514191C1}.Release|x86.Deploy.0 = Release|Any CPU
 		{FF1A936B-39C3-402D-A191-D65220C57428}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{FF1A936B-39C3-402D-A191-D65220C57428}.Debug|Any CPU.Build.0 = Debug|x86
+		{FF1A936B-39C3-402D-A191-D65220C57428}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{FF1A936B-39C3-402D-A191-D65220C57428}.Debug|ARM.ActiveCfg = Debug|ARM
 		{FF1A936B-39C3-402D-A191-D65220C57428}.Debug|ARM.Build.0 = Debug|ARM
 		{FF1A936B-39C3-402D-A191-D65220C57428}.Debug|ARM.Deploy.0 = Debug|ARM
