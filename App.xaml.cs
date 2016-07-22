@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace FormattedNumberEntry
+namespace FormattedNumberEntrySample
 {
 	public partial class App : Application
 	{

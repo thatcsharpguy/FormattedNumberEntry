@@ -1,11 +1,13 @@
 ﻿using Xamarin.Forms;
 
-namespace FormattedNumberEntry
+namespace FormattedNumberEntrySample
 {
 	public partial class FormattedNumberEntryPage : ContentPage
 	{
 		public FormattedNumberEntryPage()
 		{
+			Padding = 20;
+			
 			InitializeComponent();
 		}
 	}
