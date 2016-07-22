@@ -42,13 +42,13 @@ namespace FormattedNumberEntrySample.iOS
 			var number = FormattedNumberEntry.DumbParse(oldText);
 
 			// 5. Format number, and place the formatted text in newText
-			var output = $"{number:#,##0}";
+			var newText = $"{number:#,##0}";
 
 			// 6. Set the Text property of our control to newText
-			Control.Text = output;
+			Control.Text = newText;
 
 			// 7. Calculate the new cursor position
-			var change = -1 * (oldText.Length - output.Length);
+			var change = -1 * (oldText.Length - newText.Length);
 			var newPosition = Control.GetPosition(selectedRange.Start, (nint)change);
 
 			// 8. Set the new cursor position
