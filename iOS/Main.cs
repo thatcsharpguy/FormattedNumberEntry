@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace FormattedNumberEntry.iOS
+namespace FormattedNumberEntrySample.iOS
 {
 	public class Application
 	{
