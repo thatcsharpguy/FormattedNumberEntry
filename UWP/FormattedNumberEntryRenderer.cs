@@ -16,39 +16,15 @@ namespace FormattedNumberEntrySample.UWP
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged(e);
-            if (Control == null)
-            {
-                return;
-            }
 
             if (e.OldElement != null)
             {
-                // Unsubscribe from event handlers and cleanup any resources
                 Control.TextChanged -= Control_TextChanged;
             }
             if (e.NewElement != null)
             {
-                // Configure the control and subscribe to event handlers
                 Control.TextChanged += Control_TextChanged;
             }
-        }
-
-
-
-        int DumbParse(string input)
-        {
-            var number = 0;
-
-            int multiply = 1;
-            for (int i = input.Length - 1; i >= 0; i--)
-            {
-                if (Char.IsDigit(input[i]))
-                {
-                    number += (input[i] - '0') * (multiply);
-                    multiply *= 10;
-                }
-            }
-            return number;
         }
 
         private void Control_TextChanged(object sender, Windows.UI.Xaml.Controls.TextChangedEventArgs e)
@@ -77,10 +53,10 @@ namespace FormattedNumberEntrySample.UWP
 
             // 7. Calculate the new cursor position
             var change = -1 * (oldText.Length - newText.Length);
-
-            // 8. Set the new cursor position
             if (cursorPosition + change < 0)
                 change = 0;
+
+            // 8. Set the new cursor position
             Control.SelectionStart = cursorPosition + change;
 
             // 9. Start listening for changes on our control’s Text property
