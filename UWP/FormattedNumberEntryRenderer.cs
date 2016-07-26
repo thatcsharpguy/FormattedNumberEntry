@@ -27,6 +27,25 @@ namespace FormattedNumberEntrySample.UWP
             }
         }
 
+		protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+		{
+			if (e.PropertyName.Equals(nameof(FormattedNumberEntry.Value)))
+			{
+				var element = ((FormattedNumberEntry)Element);
+				// 5. Format number, and place the formatted text in newText
+				var newText = $"{element.Value:#,##0}";
+
+				// 6. Set the Text property of our control to newText
+				Control.Text = newText;
+
+			}
+			else 
+			{
+				base.OnElementPropertyChanged(sender, e);
+			}
+
+		}
+
         private void Control_TextChanged(object sender, Windows.UI.Xaml.Controls.TextChangedEventArgs e)
         {
 
@@ -44,6 +63,7 @@ namespace FormattedNumberEntrySample.UWP
 
             // 4. Parse oldText into a number, lets name it number
             var number = FormattedNumberEntry.DumbParse(oldText);
+			element.Value = number;
 
             // 5. Format number, and place the formatted text in newText
             var newText = $"{number:#,##0}";

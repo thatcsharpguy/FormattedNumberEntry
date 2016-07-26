@@ -5,6 +5,14 @@ namespace FormattedNumberEntrySample
 {
 	public class FormattedNumberEntry : Entry
 	{
+		public static readonly BindableProperty ValueProperty =
+			BindableProperty.Create(nameof(Value), typeof(int), typeof(FormattedNumberEntry), 0);
+		
+		public int Value
+		{
+			get { return (int)GetValue(ValueProperty); }
+			set { SetValue(ValueProperty, value); }
+		}
 
 		public bool ShouldReactToTextChanges { get; set; }
 
@@ -30,25 +38,6 @@ namespace FormattedNumberEntrySample
 			}
 			return number;
 		}
-
-		//protected override void OnPropertyChanged(string propertyName = null)
-		//{
-		//	if (nameof(this.Text).Equals(propertyName))
-		//	{
-		//		if (!_shouldReactToTextChange) return;
-
-		//		_shouldReactToTextChange = false;
-
-		//		var oldText = this.Text;
-		//		var number = DumbParse(oldText);
-		//		var newText = $"{number:#,###}";
-
-		//		this.Text = newText;
-
-		//		_shouldReactToTextChange = true;
-		//	}
-		//	base.OnPropertyChanged(propertyName);
-		//}
 	}
 }
 

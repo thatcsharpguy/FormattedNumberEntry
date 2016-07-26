@@ -5,9 +5,13 @@
 		xmlns:local="clr-namespace:FormattedNumberEntrySample" 
 		x:Class="FormattedNumberEntrySample.FormattedNumberEntryPage">
 	<StackLayout>
-		<Label Text="Welcome to Xamarin Forms!" 
+		<Label 
+			x:Name="FormattedLabel"
+			Text="Welcome to Xamarin Forms!" 
 			VerticalOptions="Center" 
 			HorizontalOptions="Center" />
-		<local:FormattedNumberEntry />
+		<local:FormattedNumberEntry x:Name="FormattedEntry" />
+		<Entry x:Name="NormalEntry" />
+		<Button x:Name="SetValue" Text="Set Value" />
 	</StackLayout>
 </ContentPage>

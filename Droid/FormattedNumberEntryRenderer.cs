@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using Android.Text;
 using FormattedNumberEntrySample;
 using FormattedNumberEntrySample.Droid;
@@ -24,6 +25,25 @@ namespace FormattedNumberEntrySample.Droid
 			}
 		}
 
+		protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+		{
+			if (e.PropertyName.Equals(nameof(FormattedNumberEntry.Value)))
+			{
+				var element = ((FormattedNumberEntry)Element);
+				// 5. Format number, and place the formatted text in newText
+				var newText = $"{element.Value:#,##0}";
+
+				// 6. Set the Text property of our control to newText
+				Control.Text = newText;
+
+			}
+			else 
+			{
+				base.OnElementPropertyChanged(sender, e);
+			}
+
+		}
+
 		void Control_AfterTextChanged(object sender, AfterTextChangedEventArgs e)
 		{
 			var element = ((FormattedNumberEntry)Element);
@@ -40,6 +60,7 @@ namespace FormattedNumberEntrySample.Droid
 
 			// 4. Parse oldText into a number, lets name it number
 			var number = FormattedNumberEntry.DumbParse(oldText);
+			element.Value = number;
 
 			// 5. Format number, and place the formatted text in newText
 			var newText = $"{number:#,##0}";
